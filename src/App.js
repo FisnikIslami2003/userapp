@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { Header } from './components/header';
+import { Userlist } from './components/userlist';
+import { Adduser } from './components/adduser';
+import { Userdetails } from './components/userdetails';
+import { useContext } from 'react';
+import { AppContext } from './context/AppContext';
 
 function App() {
+  const { visibleComponent } = useContext(AppContext);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {visibleComponent === "default" && <>
+        <Header />
+        <Userlist />
+        <Adduser />
+      </>}
+      {visibleComponent === "details" && <Userdetails />}
     </div>
   );
 }

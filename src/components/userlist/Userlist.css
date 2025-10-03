@@ -1,0 +1,14 @@
+.userlist-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background-color: aqua;
+}
+.users-container {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
