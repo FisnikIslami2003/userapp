@@ -1,16 +1,29 @@
 .user-card {
   width: 250px;
   height: 290px;
-  background-color: rgb(93, 180, 91);
+  background: linear-gradient(to bottom right,white,blue,black);
   border: 3px solid black;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 12px;
   cursor: pointer;
+  transition: box-shadow 0.3s ease,transform 0.3s ease;
+}
+.user-card:hover{
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transform: translateY(-5px);
 }
 .user-card p {
-  font-size: 17px;
+  font-size: 20px;
+  color: white;
+}
+
+.user-card button{
+  width: 70px;
+  border-radius: 10px;
+  background-color: rgb(57, 34, 5);
+  color: wheat;
 }

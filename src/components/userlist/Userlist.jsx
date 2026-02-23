@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { AppContext } from "../../context/AppContext";
 import { User } from "./user/User";
 import "./Userlist.css";
@@ -7,11 +7,6 @@ export const Userlist = () => {
   const { users, setUsers } = useContext(AppContext);
   const [search, setSearch] = useState("");
 
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => setUsers(data));
-  }, [setUsers]);
 
   const filteredUsers = users.filter(
     (user) =>

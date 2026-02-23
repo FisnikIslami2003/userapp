@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import "./Userdetails.css";
+import { useNavigate } from "react-router-dom";
 
 export const Userdetails = () => {
-  const { selectedUser, setVisibleComponent } = useContext(AppContext);
+  const { selectedUser } = useContext(AppContext);
+  const navigate=useNavigate();
 
   if (!selectedUser) return null;
 
   const handleBack = () => {
-    setVisibleComponent("default");
+      navigate('/')
   };
 
   return (

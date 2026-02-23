@@ -3,20 +3,37 @@ import { Header } from './components/header';
 import { Userlist } from './components/userlist';
 import { Adduser } from './components/adduser';
 import { Userdetails } from './components/userdetails';
-import { useContext } from 'react';
-import { AppContext } from './context/AppContext';
+import {Routes,Route} from 'react-router-dom';
 
 function App() {
-  const { visibleComponent } = useContext(AppContext);
-
   return (
     <div className="App">
-      {visibleComponent === "default" && <>
         <Header />
-        <Userlist />
-        <Adduser />
-      </>}
-      {visibleComponent === "details" && <Userdetails />}
+        <Routes>
+           <Route
+            path='/'
+            element={
+              <>
+              <Userlist/>
+              <Adduser/>
+              </>
+            }
+           
+           
+           />
+          <Route
+           path='/details'
+           element={
+            <>
+            <Userdetails/>
+            
+            </>
+           }
+
+          />
+
+        </Routes>
+          
     </div>
   );
 }
